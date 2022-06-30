@@ -100,15 +100,48 @@ include('includes/fonctions.php');
 // debug($planetes);
 // debug($ages);
 
-$tab = [
-    'voiture' => 'ford',
-    'nombre' => [1,2,3,4],
-    'planete' => ['mars','terre']
-];
+// $tab = [
+//     'voiture' => 'ford',
+//     'nombre' => [1,2,3,4],
+//     'planete' => ['mars','terre']
+// ];
 
-debug($tab['nombre'][0]);
+// debug($tab['nombre'][0]);
 
+$tab = [];
+$tab[] = ['A','B','C'];
+$tab[] = ['S','U','V'];
+$tab[] = ['O','U','E','I'];
+
+// Ecrire le mot ESCCI 
+// debug($tab);
+echo $tab[2][2].$tab[1][0].$tab[0][2].$tab[0][2].$tab[2][3];
+
+$produits = [
+    ['nom' => 'chaussettes', 'prix' => 10],
+    ['nom' => 'velo' , 'prix' => 500],
+    ['nom' => 'carotte' , 'prix' => 2],
+    ['nom' => 'boulon' , 'prix' => 9]
+]
 ?>
+<!--
+Traverser le tableau produits (foreach) pour afficher le nom du produit et son prix dans une liste ul:
+    'nom du produit' : 'prix' €
+    'nom du produit' : 'prix' €
+    ...
+-->
+<ul>
+    <?php 
+        foreach($produits as $produit) {
+    ?>
+    <li>
+        <?php /*echo $produit['nom'] . ' : ' . $produit['prix'] . ' €'; */?>
+        <?=$produit['nom']?> : <?=$produit['prix']?> €
+    </li>
+    <?php } ?>
+</ul>
+
+
 </main>
 <?php
 include('includes/footer.php');
