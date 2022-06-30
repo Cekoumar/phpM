@@ -48,6 +48,7 @@ include('includes/fonctions.php');
 
 // foreach($notes as $note) {
 //     echo $note . '<br>';
+//     echo "$note<br>";
 // }
 
 //====================
@@ -78,7 +79,8 @@ include('includes/fonctions.php');
 // debug($ages);
 
 // foreach($ages as $key => $value) {
-//     echo $key . ' a ' . $value . ' ans<br>';
+//     // echo $key . ' a ' . $value . ' ans<br>';
+//     echo "$key a $value ans<br>";
 // }
 
 // $html = '<ul>';
@@ -105,24 +107,25 @@ include('includes/fonctions.php');
 //     'nombre' => [1,2,3,4],
 //     'planete' => ['mars','terre']
 // ];
-
-// debug($tab['nombre'][0]);
-
-$tab = [];
-$tab[] = ['A','B','C'];
-$tab[] = ['S','U','V'];
-$tab[] = ['O','U','E','I'];
-
-// Ecrire le mot ESCCI 
 // debug($tab);
-echo $tab[2][2].$tab[1][0].$tab[0][2].$tab[0][2].$tab[2][3];
+// echo $tab['nombre'][0];
+
+// $tab = [];
+// $tab[] = ['A','B','C'];
+// $tab[] = ['S','U','V'];
+// $tab[] = ['O','U','E','I'];
+
+// // Ecrire le mot ESCCI 
+// debug($tab);
+// echo $tab[2][2].$tab[1][0].$tab[0][2].$tab[0][2].$tab[2][3];
 
 $produits = [
     ['nom' => 'chaussettes', 'prix' => 10],
     ['nom' => 'velo' , 'prix' => 500],
     ['nom' => 'carotte' , 'prix' => 2],
     ['nom' => 'boulon' , 'prix' => 9]
-]
+];
+debug($produits);
 ?>
 <!--
 Traverser le tableau produits (foreach) pour afficher le nom du produit et son prix dans une liste ul:
@@ -131,11 +134,9 @@ Traverser le tableau produits (foreach) pour afficher le nom du produit et son p
     ...
 -->
 <ul>
-    <?php 
-        foreach($produits as $produit) {
-    ?>
+    <?php foreach($produits as $produit) { ?>
     <li>
-        <?php /*echo $produit['nom'] . ' : ' . $produit['prix'] . ' €'; */?>
+        <?php /*echo $produit['nom'] . ' : ' . $produit['prix'] . ' €';*/ ?>
         <?=$produit['nom']?> : <?=$produit['prix']?> €
     </li>
     <?php } ?>
